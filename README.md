@@ -1,2 +1,2 @@
-# desk-screen
-A screen element for desk applications
+# desk-popup
+A popup element for desk applications
