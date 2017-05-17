@@ -1,0 +1,70 @@
+<!--
+@license
+Copyright (c) 2016 The Jviz Project Authors. All rights reserved.
+The Jviz Project is under the MIT License. See https://github.com/jviz/jviz/blob/dev/LICENSE
+-->
+
+<!-- Import components -->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../jviz/jviz.html">
+<link rel="import" href="../jviz-styles/jviz-styles.html">
+<link rel="import" href="../jviz-icons/jviz-icons.html">
+
+<!-- Import desk components -->
+<link rel="import" href="../desk-styles/desk-styles.html">
+
+<!-- Import popup elements -->
+<link rel="import" href="./desk-popup-obfuscator.html">
+
+<!-- Popup element -->
+<dom-module id="desk-popup">
+  <template>
+    <style>
+      /* Host style */
+      :host
+      {
+        --desk-popup--padding: 10px;
+      }
+      :host
+      {
+        display: none;
+      }
+      :host[visible]
+      {
+        display: block;
+      }
+
+      /* Popup div */
+      :host .popup
+      {
+        display: block;
+        width: calc(96% - 2 * var(--desk-popup--padding));
+        height: calc(96% - 2 * var(--desk-popup--padding));
+        z-index: 3001;
+        position: fixed;
+        top: 2%;
+        left: 2%;
+        padding: var(--desk-popup--padding);
+        background-color: var(--jviz-white);
+        border-radius: 5px;
+      }
+    </style>
+    <div class="popup">
+      <content></content>
+    </div>
+    <desk-popup-obfuscator></desk-popup-obfuscator>
+  </template>
+</dom-module>
+
+<!-- Popup element logic -->
+<script>
+  //Initialize the desktop popup element
+  var desk_popup = { is: 'desk-popup' };
+
+  //Popup properties
+  desk_popup.properties = {};
+  desk_popup.properties.visible = { type: Boolean, value: false, reflectToAttribute: true };
+
+  //Register the desktop popup element
+  Polymer(desk_popup);
+</script>
