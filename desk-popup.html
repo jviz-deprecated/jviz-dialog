@@ -108,6 +108,33 @@ The Jviz Project is under the MIT License. See https://github.com/jviz/jviz/blob
   desk_popup.properties.visible = { type: Boolean, value: false, reflectToAttribute: true };
   desk_popup.properties.header = { type: String, reflectToAttribute: true, value: '' };
 
+  //Attached event
+  desk_popup.attached = function()
+  {
+    //Save this
+    var self = this;
+
+    //Add the close click listener
+    jviz.dom.mouse_down(this.$.close, function()
+    {
+      //Emit the close event
+      var result = self.fire('close', {}, { cancelable: true });
+
+      //Check if the action has been canceled
+      if(result.defaultPrevented === false)
+      {
+        //Close the popup
+        return self.hide();
+      }
+    });
+  };
+
+  //Show the popup
+  desk_popup.show = function(){ this.visible = true; };
+
+  //Hide the popup
+  desk_popup.hide = function(){ this.visible = false; };
+
   //Register the desktop popup element
   Polymer(desk_popup);
 </script>
