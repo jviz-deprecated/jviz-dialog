@@ -1,0 +1,16 @@
+{
+  "name": "desk-popup",
+  "description": "A popup element for desktop apps",
+  "ignore": [ "**/.*", "node_modules", "bower_components" ],
+  "dependencies":
+  {
+    "polymer": "Polymer/polymer#^1.4.0",
+    "jviz": "jviz/jviz#dev",
+    "jviz-styles": "jviz/jviz-styles#dev",
+    "jviz-icons": "jviz/jviz-icons#dev",
+    "desk-styles": "jviz/desk-styles#dev"
+  },
+  "license": "MIT",
+  "authors": [ "Josemi Juanes <josemijuanes@gmail.com>" ],
+  "keywords": [ "jviz", "desk", "desk-components", "popup", "desk-popup" ]
+}
