@@ -1,0 +1,28 @@
+<!--
+@license
+Copyright (c) 2016 The Jviz Project Authors. All rights reserved.
+The Jviz Project is under the MIT License. See https://github.com/jviz/jviz/blob/dev/LICENSE
+-->
+
+<!-- Import components -->
+<link rel="import" href="../desk-popup.html">
+
+<!-- Popup element -->
+<desk-popup id="test" header="Test popup" visible>
+  Content of the popup
+</desk-popup>
+
+<script>
+  //Initialize the popup element
+  var el = null;
+
+  //Document ready
+  jviz.dom.ready(function()
+  {
+    //Get the popup element
+    el = jviz.dom.id('test');
+
+    //Display the popup
+    el.visible = true;
+  });
+</script>
