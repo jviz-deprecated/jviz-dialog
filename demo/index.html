@@ -22,6 +22,16 @@ The Jviz Project is under the MIT License. See https://github.com/jviz/jviz/blob
     //Get the popup element
     el = jviz.dom.id('test');
 
+    //Add the close event listener
+    el.addEventListener('close', function(e)
+    {
+      //Display in console
+      console.log('Popup closed');
+
+      //Prevent default, only for testing
+      //e.preventDefault();
+    });
+
     //Display the popup
     el.visible = true;
   });
