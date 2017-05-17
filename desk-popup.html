@@ -48,9 +48,51 @@ The Jviz Project is under the MIT License. See https://github.com/jviz/jviz/blob
         background-color: var(--jviz-white);
         border-radius: 5px;
       }
+      :host .popup .header
+      {
+        display: block;
+        width: 100%;
+        height: 30px;
+        margin-bottom: 5px;
+      }
+      :host .popup .header .text
+      {
+        display: inline-block;
+        height: 30px;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 30px;
+        float: left;
+      }
+      :host .popup .header .icon
+      {
+        cursor: pointer;
+        float: right;
+        opacity: 0.7;
+        transition: all 0.3s;
+      }
+      :host .popup .header .icon:hover
+      {
+        opacity: 1.0;
+      }
+      :host .popup .content
+      {
+        display: block;
+        width: 100%;
+        height: calc(100% - 35px);
+        overflow-x: auto;
+      }
     </style>
     <div class="popup">
-      <content></content>
+      <!-- Popup header -->
+      <div class="header">
+        <div class="text">{{ header }}</div>
+        <jviz-icons id="close" class="icon" icon="close" size="30px" color="navy"></jviz-icons>
+      </div>
+      <!-- Popup content -->
+      <div class="content">
+        <content></content>
+      </div>
     </div>
     <desk-popup-obfuscator></desk-popup-obfuscator>
   </template>
@@ -64,6 +106,7 @@ The Jviz Project is under the MIT License. See https://github.com/jviz/jviz/blob
   //Popup properties
   desk_popup.properties = {};
   desk_popup.properties.visible = { type: Boolean, value: false, reflectToAttribute: true };
+  desk_popup.properties.header = { type: String, reflectToAttribute: true, value: '' };
 
   //Register the desktop popup element
   Polymer(desk_popup);
