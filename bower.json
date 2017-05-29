@@ -1,6 +1,6 @@
 {
-  "name": "desk-popup",
-  "description": "A popup element for desktop apps",
+  "name": "jviz-dialog",
+  "description": "A jviz dialog element",
   "ignore": [ "**/.*", "node_modules", "bower_components" ],
   "dependencies":
   {
@@ -12,5 +12,5 @@
   },
   "license": "MIT",
   "authors": [ "Josemi Juanes <josemijuanes@gmail.com>" ],
-  "keywords": [ "jviz", "desk", "desk-components", "popup", "desk-popup" ]
+  "keywords": [ "jviz", "jviz-components", "dialog", "dialog-popup" ]
 }
